@@ -20,8 +20,8 @@ public class MovieDetailsFragment extends Fragment implements SelectedBundle {
     TextView title;
     TextView releaseDate;
     TextView movieDescription;
+    Movie movie;
 
-    Movie moviea = new Movie();
 
     public MovieDetailsFragment() {
         // Required empty public constructor
@@ -42,16 +42,14 @@ public class MovieDetailsFragment extends Fragment implements SelectedBundle {
         title= (TextView) view.findViewById(R.id.title) ;
         releaseDate= (TextView) view.findViewById(R.id.releaseDate) ;
         movieDescription= (TextView) view.findViewById(R.id.description) ;
-        title.setText(moviea.getTitle());
-        releaseDate.setText(moviea.getReleaseDate());
-        movieDescription.setText(moviea.getOverview());
+        title.setText(movie.getTitle());
+        releaseDate.setText(movie.getReleaseDate());
+        movieDescription.setText(movie.getOverview());
         return view;
     }
 
     @Override
     public void onBundleSelect(Bundle bundle) {
-        Movie movie = (Movie) bundle.getSerializable("value");
-        moviea=movie;
-
+         movie = (Movie) bundle.getSerializable("value");
     }
 }

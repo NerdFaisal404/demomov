@@ -79,7 +79,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 if (selectedBundle != null) {
                     selectedBundle.onBundleSelect(bundle);
                 }
-                showFragment(fragment);
+                ((MainActivity) context).showFragment(fragment);
               /*  Intent intent = new Intent(context, DetailActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.putExtras(bundle);
